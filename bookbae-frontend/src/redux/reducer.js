@@ -22,12 +22,13 @@ const reducer = (state = initialState, action) => {
 
     case 'ADD_BOOK':
       let addedBook = action.payload
-      return {...state, books: {
-        read: state.books.read,
-        wantToRead: [...state.books.wantToRead, addedBook],
-        currentlyReading: state.books.currentlyReading
+      return {...state,
+        books: {
+          read: state.books.read,
+          wantToRead: [...state.books.wantToRead, addedBook],
+          currentlyReading: state.books.currentlyReading
       }
-}
+    }
     case 'HANDLE_LOGIN': {
       return {...state, auth: action.payload,
         books: {
@@ -84,16 +85,8 @@ const reducer = (state = initialState, action) => {
        }
      }
    }
-
-    // case "ADD_TO_BOOKSHELF":
-    //   let newBook = action.payload
-    //   let uniqueArray = new Set()
-    //   let newArray = [...uniqueArray.add(newBook)]
-    //     return {...state, shelf: newArray}
-
     default:
       return state
-
     }
 }
 

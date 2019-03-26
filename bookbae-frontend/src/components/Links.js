@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+// --- Note to self: add reviews back once they are fixed ---
+
+// <Link className="first after" to='/reviews'>
+//   <p className="userlinks">Reviews</p>
+// </Link>
+
 const Links = () => {
   return (
     <div className="container">
@@ -13,9 +19,7 @@ const Links = () => {
       <Link className="first after" to='/want-to-read'>
         <p className="userlinks">{"Want to Read"}</p>
       </Link>
-      <Link className="first after" to='/reviews'>
-        <p className="userlinks">Reviews</p>
-      </Link>
+
 
       <Link className="first after" to="/search-books" >
         <p className="userlinks">Search Books</p>

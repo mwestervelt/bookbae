@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import {Card, Header, Dropdown, Message, Image, Button, Modal, Form, Label, Icon} from "semantic-ui-react"
-import { Redirect, Link } from 'react-router-dom'
+import {Card, Header, Image, Button, Modal} from "semantic-ui-react"
+import { NavLink } from 'react-router-dom'
 
 // redux stuff
 import { connect } from 'react-redux'
 import { updateUserFromFetch, updateBookObjs, addBook } from '../redux/actions'
 
 
-const shelftypes = [
-  {key: 'read', text: 'Have Read', value: 'read'},
-  {key: 'reading', text: 'Currently Reading', value: 'currently_reading'},
-  {key: 'want', text: 'Want to Read', value: 'want_to_read'},
-]
+// const shelftypes = [
+//   {key: 'read', text: 'Have Read', value: 'read'},
+//   {key: 'reading', text: 'Currently Reading', value: 'currently_reading'},
+//   {key: 'want', text: 'Want to Read', value: 'want_to_read'},
+// ]
 
 
 class Book extends Component {
@@ -124,20 +124,21 @@ handleChange = (e, { value }) => {
       trigger={<Button secondary onClick={(e) => this.addToBookshelf(e, this.props.bookObj)}>Add to Shelf</Button>}
       basic
       size='small'
-
     >
-      <Header icon='book' content='{this.props.bookObj.volumeInfo.title} has been added' />
+      <Header icon='book'>{this.props.bookObj.volumeInfo.title} has been added</Header>
       <Modal.Content>
         <h3>Congrats. What will you do next?</h3>
       </Modal.Content>
       <Modal.Actions>
 
-        <Button color='green'  >
-          <Icon name='checkmark' /> Add more books, obviously.
+        <Button color='green'  icon='checkmark' inverted >
+            content ={<NavLink to='/search-books'>Add more books!</NavLink>}>
         </Button>
 
-        <Button color='teal' content={<Link to='/want-to-read'/>} >
-          <Icon name='checkmark' /> View my books!
+
+
+        <Button color='teal' icon='checkmark' inverted >
+            content ={<NavLink to='/want-to-read'>View my books!</NavLink>}>
         </Button>
       </Modal.Actions>
     </Modal>

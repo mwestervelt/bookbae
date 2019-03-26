@@ -13,7 +13,7 @@ class BookContainer extends React.Component {
 
 
   searchHandler = (search) => {
-    if (search.length > 0) {
+    if (search.length >= 0) {
     fetch('https://www.googleapis.com/books/v1/volumes?q=' + search)
     // put this after search + '&maxResults=40'
       .then(res => res.json())

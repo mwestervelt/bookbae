@@ -1,8 +1,8 @@
 import React from 'react';
-import { Segment, Grid, Header, Image, Button, Icon} from "semantic-ui-react"
+import { Segment, Grid, Button} from "semantic-ui-react"
 // import SearchForm from './SearchForm'
 import Links from './Links'
-import { Link, NavLink} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, Header} from "semantic-ui-react"
+import {Card} from "semantic-ui-react"
 
 class ReviewCard extends Component {
 

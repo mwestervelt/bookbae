@@ -8,7 +8,12 @@ export const addBook = (user_book) => ({type:"ADD_BOOK", payload: user_book})
 
 export const getBooksFromApi = (books) => ({
   type: 'GET_BOOKS_FROM_API',
-  payload: books
+  payload: books,
+  meta: {
+   debounce: {
+     time: 500
+   }
+ }
 })
 
 export const handleLogin = (user) => ({
