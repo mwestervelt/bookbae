@@ -132,13 +132,13 @@ handleChange = (e, { value }) => {
       <Modal.Actions>
 
         <Button color='green'  icon='checkmark' inverted >
-            content ={<NavLink to='/search-books'>Add more books!</NavLink>}>
+            {<NavLink to='/search-books'>Add more books!</NavLink>}>
         </Button>
 
 
 
         <Button color='teal' icon='checkmark' inverted >
-            content ={<NavLink to='/want-to-read'>View my books!</NavLink>}>
+            {<NavLink to='/want-to-read'>View my books!</NavLink>}>
         </Button>
       </Modal.Actions>
     </Modal>

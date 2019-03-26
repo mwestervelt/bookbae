@@ -60,18 +60,14 @@ class UserBook extends Component {
     fetch('http://localhost:3000/api/v1/reviews', options)
     .then(res => res.json())
     .then(review => console.log(review))
-    // send this to review container???????
   }
 
 
   handleChangeCategory = (e, book) => {
     e.preventDefault()
     let user_book = this.props.user.user_books.find(user_book => user_book.book_id === book.id)
-
     this.props.updateAndFetch(e, user_book, user_book.shelf_type)
   }
-
-
 
 
   renderReviewForm (){
@@ -95,7 +91,6 @@ class UserBook extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Card raised>
         <Card.Content textAlign="center">
