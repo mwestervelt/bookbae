@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+* {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.homepage {
+  background-image: url("https://images.unsplash.com/photo-1465433045946-ba6506ce5a59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.welcome-header {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+#welcomemessage {
+  font-size: 35px;
+  padding: 50px;
+  padding-right: 10px;
+  text-align: left;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 10;
+
+}
+
+h1 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 35px;
+}
+
+.userlinks {
+  display: inline-block;
+  justify-content: center;
+  padding: 15px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  background-color: rgba(25,25,25, .8);
+  /* box-shadow: 10px 15px 30px rgba(0, 0, 0, .20); */
+  border-radius: 3px;
+}
+
+.term {
+  display: inline-block;
+  justify-content: center;
+  padding-left: 200px;
+  padding-right: 200px;
+}
