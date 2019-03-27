@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card,  Button, Form, Image, Input} from "semantic-ui-react"
+import {Card,  Button, Form, Image, Input, Modal, Grid} from "semantic-ui-react"
 
 //redux stuff
 import { connect } from 'react-redux'
@@ -104,30 +104,41 @@ class UserBook extends Component {
           onClick={() => this.handleClickedImage()}
           alt={this.props.bookObj.title}
           src={this.props.bookObj.image === undefined ? null : this.props.bookObj.image}/>
-        <div>{this.state.favorited === true ? <i onClick={() => this.changeFavorited(this.props.bookObj)} className="fas fa-heart"></i> : <i onClick={() => this.changeFavorited(this.props.bookObj)} className="far fa-heart"></i>}</div>
-          {this.state.bookCardClicked &&
-          <div>
+        <div> <br />{this.state.favorited === true ? <i onClick={() => this.changeFavorited(this.props.bookObj)} className="fas fa-heart"></i> : <i onClick={() => this.changeFavorited(this.props.bookObj)} className="far fa-heart"></i>}</div>
+          {this.state.bookCardClicked ?
+
+          <Modal centered size="small" trigger={<Button primary >Book Details</Button>}>
+              <Modal.Header>{this.props.bookObj.title}</Modal.Header>
+          <Modal.Content textAlign="center">
             <p>{this.props.bookObj.author}</p>
             <p>{this.props.bookObj.description}</p>
-            <Button.Group vertical>
+            <br/>
+            <Grid centered>
+            <Button.Group textAlign="center" horizontal>
               <Button onClick={this.handleReviewClicked}>Leave a Review</Button>
               <Button onClick={this.changeCategory}>Change Bookshelf</Button>
               <Button onClick={() => this.props.deleteBook(this.props.bookObj)}>Remove Book</Button>
-            </Button.Group> <br/><br/>
+            </Button.Group>
+          </Grid> <br/>
             {this.state.categoryFormClicked &&
-              <form onSubmit={(e) => this.handleChangeCategory(e, this.props.bookObj)} >
+              <Grid centered>
+              <form className='aform' onSubmit={(e) => this.handleChangeCategory(e, this.props.bookObj)} >
                 <select className="filter" name="category" onChange={this.handleSelect}>
                   <option value="read">Have Read</option>
                   <option value="wantToRead">Want to Read</option>
                   <option value="currentlyReading">Currently Reading</option>
                 </select>
                 <input className="button" type="submit" value="Submit" />
-              </form>}
+              </form>
+            </Grid>
+          }
 
             <div>
               {this.state.reviewFormClicked ? this.renderReviewForm() : null}
             </div>
-        </div>}
+        </Modal.Content>
+      </Modal> : ""
+    }
         </Card.Content>
       </Card>
     )

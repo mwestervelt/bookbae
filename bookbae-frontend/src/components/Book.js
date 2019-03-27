@@ -92,7 +92,7 @@ handleChange = (e, { value }) => {
         </Card.Meta>
         <Image
         alt={this.props.bookObj.volumeInfo.title}
-        src={this.props.bookObj.volumeInfo.imageLinks === undefined ? null : this.props.bookObj.volumeInfo.imageLinks.thumbnail}/>
+        src={this.props.bookObj.volumeInfo.imageLinks === undefined ? `https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png` : this.props.bookObj.volumeInfo.imageLinks.thumbnail}/>
 
         {this.state.bookCardClicked &&
         <div>
@@ -100,7 +100,7 @@ handleChange = (e, { value }) => {
           <p>{this.props.bookObj.volumeInfo.description}</p>
       </div>}
       </Card.Content>
-      <Modal size="small" trigger={<Button  primary >Book Details</Button>}>
+      <Modal size="small" trigger={<Button primary >Book Details</Button>}>
         <Modal.Header>{this.props.bookObj.volumeInfo.title}</Modal.Header>
           <Modal.Content>
           {this.props.bookObj.volumeInfo.authors} <br/><br/>
@@ -108,7 +108,7 @@ handleChange = (e, { value }) => {
 
         <Image
         alt={this.props.bookObj.volumeInfo.title}
-        src={this.props.bookObj.volumeInfo.imageLinks === undefined ? null : this.props.bookObj.volumeInfo.imageLinks.thumbnail}/>
+        src={this.props.bookObj.volumeInfo.imageLinks === undefined ? `https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png` : this.props.bookObj.volumeInfo.imageLinks.thumbnail}/>
 
 
               <br></br><br></br>
@@ -132,13 +132,13 @@ handleChange = (e, { value }) => {
       <Modal.Actions>
 
         <Button color='green'  icon='checkmark' inverted >
-            {<NavLink to='/search-books'>Add more books!</NavLink>}>
+            {<NavLink to='/search-books'>Add more books!</NavLink>}
         </Button>
 
 
 
         <Button color='teal' icon='checkmark' inverted >
-            {<NavLink to='/want-to-read'>View my books!</NavLink>}>
+            {<NavLink to='/want-to-read'>View my books!</NavLink>}
         </Button>
       </Modal.Actions>
     </Modal>
