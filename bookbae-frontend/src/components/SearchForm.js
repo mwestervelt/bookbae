@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Input, Header, Icon, Grid} from 'semantic-ui-react'
+import { Header, Icon, Grid, Button, Form} from 'semantic-ui-react'
 import Links from './Links'
 
 
 
-export default class SearchForm extends Component {
+class SearchForm extends Component {
 
   state = {
      term: ""
@@ -14,8 +14,14 @@ export default class SearchForm extends Component {
   changeHandler = (event) => {
     this.setState({
       [event.target.name]: event.target.value
-    }, this.props.searchHandler(this.state.term))
-      }
+    })
+  }
+
+  submitHandler = () => {
+    this.props.searchHandler(this.state.term)
+    this.setState({ term: ''})
+  }
+
 
   render() {
     return (
@@ -31,14 +37,18 @@ export default class SearchForm extends Component {
         <Grid>
           <Grid.Row centered>
             <Grid.Column width={7}>
-              <Input
-                fluid
-                required
-                onChange={this.changeHandler}
-                placeholder="search..."
-                value={this.state.term}
-                type="text"
-                name="term" />
+              <Form onSubmit={this.submitHandler}>
+                <Form.Group>
+                  <Form.Input
+                    style={{width:"500px"}}
+                    onChange={this.changeHandler}
+                    placeholder="search..."
+                    value={this.state.term}
+                    type="text"
+                    name="term" />
+                  <Form.Button primary >Search</Form.Button>
+                </Form.Group>
+              </Form>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -46,3 +56,7 @@ export default class SearchForm extends Component {
     )
   }
 }
+
+
+
+export default SearchForm
