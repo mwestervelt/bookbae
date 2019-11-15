@@ -49,8 +49,6 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     bcrypt (3.1.12)
-    boogle (0.1.1)
-      faraday
     bootsnap (1.4.0)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -64,8 +62,6 @@ GEM
     erubi (1.8.0)
     faker (1.9.1)
       i18n (>= 0.7)
-    faraday (0.15.4)
-      multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -96,7 +92,6 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.6)
-    multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
@@ -104,7 +99,8 @@ GEM
     pg (1.1.4)
     puma (3.12.0)
     rack (2.0.6)
-    rack-cors (1.0.2)
+    rack-cors (1.0.5)
+      rack (>= 1.6.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.2)
@@ -169,7 +165,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.7)
   bcrypt (~> 3.1.7)
-  boogle
   bootsnap (>= 1.1.0)
   byebug
   faker (~> 1.9)
